@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'Aeonik';
+  src: url(/fonts/Aeonik-Regular.otf);
+}
+
+@font-face {
+  font-family: 'Aeonik-bold';
+  src: url(/fonts/Aeonik-Bold.otf);
+}
+
+@font-face {
+  font-family: 'Aeonik-light';
+  src: url(/fonts/Aeonik-Light.otf);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f9f3ef;
+  font-family: 'Aeonik';
+  height: 100%;
+}
+
+*::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+  /* make scrollbar transparent */
+}
+
+.container {
+  position: relative;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+}
+
+.page-enter {
+  position: fixed;
+  opacity: 0;
+  transform: translate3d(0, 100vh, 0);
+  /* Mueve el elemento hacia abajo en el eje Y */
+  z-index: 999;
+}
+
+.page-enter-active {
+  /* position: fixed; */
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  /* Mueve el elemento de vuelta a su posición original */
+  transition:
+    opacity 300ms,
+    transform 800ms;
+  z-index: 999;
+}
+
+.page-exit {
+  opacity: 1;
+  overflow: hidden;
+}
+
+.page-exit-active {
+  opacity: 1;
+  overflow: hidden;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}

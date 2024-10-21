@@ -1,0 +1,486 @@
+.kiefer-container {
+  width: 100%;
+  padding: 8vh 2.5vw 0 3.2vw;
+  box-sizing: border-box;
+  position: relative;
+
+  & .animation-pages {
+    overflow: hidden;
+    /* background-color: aqua; */
+    width: 32%;
+    margin: 0 auto;
+  }
+
+  & .slide-pages {
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .kiefer-image-container {
+    max-height: 80vh;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  & .animation-pages.animation {
+    width: 100%;
+    height: 78vh;
+    margin-top: 0;
+    animation: reduce 2s forwards;
+    animation-delay: 1s;
+  }
+
+  & .title-work-page {
+    font-size: 5vw;
+    color: #fff;
+    font-family: 'Aeonik';
+    text-align: center;
+    margin: 0;
+    margin-top: 1vh;
+  }
+
+  & .scroll-text-works {
+    font-size: 1vw;
+    color: #fff;
+    font-family: 'Aeonik-light';
+    text-align: center;
+    margin: 0;
+    opacity: 0;
+    animation: fade 1s forwards;
+    animation-delay: 3s;
+  }
+}
+
+.kiefer-description {
+  margin-top: 2vh;
+  padding: 4% 8% 4% 8%;
+
+  & .description-text {
+    font-size: 3.1rem;
+    color: #fff;
+    font-family: 'Aeonik';
+    font-weight: 600;
+    margin: 0 auto;
+    width: fit-content;
+    margin-bottom: 10vh;
+  }
+
+  & .grid-kiefer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 1px;
+    background-color: #fff;
+
+    & .grid-item-kiefer {
+      background-color: #0c0c0c;
+      color: #fff;
+
+      & p {
+        font-family: 'Aeonik-light';
+      }
+    }
+
+    & .grid-item-kiefer:nth-child(5) {
+      & p {
+        width: 65%;
+      }
+    }
+
+    & .grid-item-kiefer.button {
+      & div {
+        cursor: pointer;
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+        height: min-content;
+        margin-top: 10px;
+        gap: 8px;
+
+        & p {
+          margin: 0;
+        }
+
+        & button {
+          width: 30px;
+          height: 30px;
+          color: #fff;
+          border: 1px solid #fff;
+          background-color: transparent;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    & .grid-item-kiefer.up {
+      display: flex;
+      align-items: flex-end;
+
+      & p {
+        margin: 0;
+        font-family: 'Aeonik-Bold';
+        font-size: 1.3rem;
+        margin: 0 0 7px 0;
+      }
+    }
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade 1s forwards;
+  animation-delay: 2s;
+}
+
+.fade-in.out {
+  opacity: 1;
+  animation: fade-out 0.5s forwards;
+}
+
+.container-prevbutton-pages.out {
+  opacity: 1;
+  animation: fade-out 0.5s forwards;
+}
+
+.container-nextbutton-pages.out {
+  opacity: 1;
+  animation: fade-out 0.5s forwards;
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes reduce {
+  to {
+    height: 30vh;
+    width: 32%;
+  }
+}
+
+.kiefer-section-1 {
+  padding: 0 8% 0 8%;
+}
+
+.kiefer-image-group-1 {
+  width: 100%;
+  display: flex;
+  margin-top: 10vh;
+  justify-content: space-between;
+  align-items: center;
+
+  & .kiefer-group-1 {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* animation: fade 1s forwards;
+        animation-delay: 4s; */
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  & .kiefer-group-2 {
+    width: 60%;
+    height: 100%;
+    display: flex;
+
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+
+    & div {
+      width: 30rem;
+      height: 20rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.kiefer-section-1-text {
+  font-size: 1.2rem;
+  font-family: 'Aeonik-light', sans-serif;
+  color: #fff;
+  margin: 0;
+  margin-top: -2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  & p {
+    margin: 0;
+    width: 37%;
+  }
+}
+
+.kiefer-image-2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.kiefer-image-3 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin-top: 10vh;
+
+  & div {
+    margin-left: 15vw;
+    width: 30%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .kiefer-container {
+    padding: 8vh 6vw 0 6vw;
+
+    & .animation-pages {
+      width: 100%;
+      margin-top: 0;
+    }
+
+    & .kiefer-image-container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: reduce-image 2s forwards;
+      animation-delay: 1s;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    & .animation-pages.animation {
+      width: 100%;
+      height: 78vh;
+      animation: reduce 2s forwards;
+      margin-top: 6vh;
+      animation-delay: 1s;
+    }
+
+    & .title-work-page {
+      font-size: 2rem;
+      color: #fff;
+      font-family: 'Aeonik';
+      text-align: center;
+      margin: 0;
+      margin-bottom: 0;
+      margin-top: 1vh;
+    }
+
+    & .scroll-text-works {
+      font-size: 1rem;
+      color: #fff;
+      font-family: 'Aeonik-light';
+      text-align: center;
+      margin: 0;
+      margin-top: 2vh;
+      opacity: 0;
+      animation: fade 1s forwards;
+      animation-delay: 3s;
+    }
+  }
+
+  .container-prevbutton-pages.mobile,
+  .container-nextbutton-pages.mobile {
+    top: 90%;
+    z-index: 100;
+
+    & .prevbutton-pages,
+    .nextbutton-pages {
+      width: 30px;
+      height: 30px;
+    }
+
+    & p {
+      font-size: 14px;
+    }
+  }
+
+  .container-nextbutton-pages.mobile {
+    right: 4vw;
+  }
+
+  .container-prevbutton-pages.mobile {
+    left: 4vw;
+  }
+
+  .kiefer-description {
+    margin-top: 2vh;
+    padding: 4% 6vw;
+
+    & .description-text {
+      font-size: 1.5rem;
+      color: #fff;
+      font-family: 'Aeonik';
+      font-weight: normal;
+      margin: 0 auto;
+      width: fit-content;
+      margin-bottom: 0;
+    }
+
+    & .grid-kiefer {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 1px;
+      background-color: #fff;
+      max-height: 36vh;
+
+      & .grid-item-kiefer {
+        background-color: #0c0c0c;
+        color: #fff;
+
+        & p {
+          font-size: 9px;
+        }
+      }
+
+      & .grid-item-kiefer:nth-child(5) {
+        & p {
+          width: 100%;
+        }
+      }
+
+      & .grid-item-kiefer.up p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .kiefer-image-group-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-end;
+    gap: 40px;
+    margin-top: 3vh;
+
+    & .kiefer-group-1 {
+      width: 70%;
+    }
+
+    & .kiefer-group-2 {
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 20px;
+
+      & .img-kiefer-group-2-1 {
+        width: 100%;
+        height: 12rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      & .img-kiefer-group-2-2 {
+        width: 100%;
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .kiefer-section-1 {
+    padding: 0 6vw;
+  }
+
+  .kiefer-section-1-text {
+    font-size: 1rem;
+    font-family: 'Aeonik-light', sans-serif;
+    color: #fff;
+    margin: 0;
+    margin-top: 4vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    & p {
+      margin: 0;
+      width: 80%;
+    }
+  }
+
+  .kiefer-image-3 {
+    display: none;
+  }
+}

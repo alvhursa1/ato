@@ -1,0 +1,30 @@
+.loading-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0c0c0c;
+  height: 100vh;
+}
+
+.logo-path {
+  stroke: #fff;
+  stroke-width: 0.5;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  fill: transparent;
+  animation:
+    draw 10s linear 0.3s forwards,
+    fill 1s linear 1.5s forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  to {
+    fill: #fff;
+  }
+}

@@ -1,0 +1,218 @@
+.carousel-wrapper {
+  position: relative;
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 85%;
+  margin: 0 auto;
+  cursor: grab;
+
+  & h2 {
+    font-family: 'Aeonik';
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 5%;
+    color: #414141;
+  }
+}
+
+.inner-carousel {
+  display: flex;
+  gap: 40px;
+  margin-left: 35px;
+}
+
+.carousel-image {
+  min-width: 30%;
+
+  & img {
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+  }
+
+  & p,
+  h3 {
+    margin: 0;
+  }
+
+  & h3 {
+    font-family: 'Aeonik';
+    font-size: 2rem;
+    color: #0c0c0c;
+    margin: 1vh 0 0 0;
+  }
+
+  & .workstation-carousel {
+    font-family: 'Aeonik';
+    font-size: 1.25rem;
+    color: #0c0c0c;
+    margin-bottom: 7px;
+  }
+}
+
+.container-prevbutton,
+.container-nextbutton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* Centra los elementos horizontalmente */
+  align-items: center;
+  gap: 8px;
+}
+
+.prevbutton-carousel,
+.nextbutton-carousel {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  /* Añade flexbox */
+  justify-content: center;
+  /* Centra los elementos horizontalmente */
+  align-items: center;
+  /* Centra los elementos verticalmente */
+  font-family: 'Aeonik-Bold';
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid #0c0c0c;
+  border-radius: 50%;
+  background-color: transparent;
+
+  & svg {
+    margin-bottom: 3px;
+  }
+
+  &:hover {
+    background-color: #0c0c0c;
+
+    & svg {
+      filter: invert(1);
+    }
+  }
+}
+
+.container-prevbutton {
+  left: 2vw;
+
+  & p {
+    margin: 0;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+}
+
+.prevbutton-carousel {
+  & svg {
+    transform: scaleX(-1);
+  }
+}
+
+.container-nextbutton {
+  right: 2vw;
+
+  & p {
+    margin: 0;
+    writing-mode: vertical-rl;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container-prevbutton,
+  .container-nextbutton {
+    display: none;
+  }
+
+  .carousel-container {
+    width: 100%;
+
+    & h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10vh;
+    }
+
+    & .inner-carousel {
+      gap: 40px;
+      margin-left: 0;
+      padding: 0 5% 0 5%;
+      margin-right: 0;
+
+      & .carousel-image {
+        min-width: 100%;
+      }
+    }
+
+    & .inner-carousel.alternate {
+      margin-top: 8vh;
+      margin-left: 0;
+      padding: 0 6% 0 6%;
+      margin-right: 0;
+
+      & h3 {
+        color: #fff;
+        text-align: center;
+      }
+    }
+  }
+
+  .mobile-copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5vh;
+    padding: 0 5%;
+
+    & p {
+      font-family: 'Aeonik-Light';
+      font-size: 0.8rem;
+      color: #fff;
+    }
+  }
+
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5vh;
+  }
+
+  .carousel-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+
+  .carousel-indicators.out {
+    animation: fadeOut 1s forwards;
+  }
+
+  .mobile-copyright.out {
+    animation: fadeOut 1s forwards;
+  }
+
+  .carousel-indicator.active {
+    background-color: #000;
+  }
+
+  .carousel-indicator.active.alternate {
+    background-color: #fff;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

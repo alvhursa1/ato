@@ -1,0 +1,401 @@
+@keyframes loadAnimation {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 65%;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.menu-works {
+  position: relative;
+}
+
+.splitter {
+  align-items: center;
+  display: flex;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+}
+
+.splitter__first {
+  width: 65%;
+  height: 100vh;
+  background-color: #fff;
+  height: 100vh;
+  /* Añade esta línea */
+  overflow-y: auto;
+  /* Añade esta línea */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+}
+
+.splitter__first::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
+}
+
+.content-left {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  min-width: 35vw;
+  position: relative;
+}
+
+.icon-works {
+  padding-top: 3%;
+  padding-left: 3%;
+  width: fit-content;
+  opacity: 0;
+  animation: opacity 1s forwards;
+  animation-delay: 1.2s;
+  color: #0c0c0c;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.title-works {
+  color: #0c0c0c;
+  text-align: center;
+  margin: 0;
+  font-family: 'Aeonik-Bold';
+  z-index: 1;
+}
+
+.workbanner-container {
+  width: 80%;
+  margin: auto;
+  margin-top: -8%;
+  opacity: 0;
+  animation: showToLeft 1s 1.2s forwards;
+}
+
+@keyframes showToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.workbanner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slogan-works {
+  width: 80%;
+  font-weight: bold;
+  color: #0c0c0c;
+  text-align: center;
+  margin: auto;
+  margin-top: 5rem;
+  margin-bottom: 0;
+  font-family: 'Aeonik';
+  opacity: 0;
+  animation: opacity 1s forwards;
+  animation-delay: 1.2s;
+}
+
+.button-works {
+  width: 30%;
+  margin: auto;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  border-radius: 40px;
+  border: 1px solid #0c0c0c;
+  background-color: transparent;
+  font-family: 'Aeonik-bold';
+  font-size: 1.4rem;
+  padding-top: 13px;
+  padding-bottom: 15px;
+  cursor: pointer;
+  opacity: 0;
+  animation: opacity 1s forwards;
+  animation-delay: 1.2s;
+}
+
+.splitter__resizer {
+  background-color: #0c0c0c;
+  height: 100vh;
+  /* width: 24px; */
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 1vw;
+}
+
+.splitter__second {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #0c0c0c;
+  height: 100vh;
+  z-index: 2;
+}
+
+.content-right::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
+}
+
+.splitter__first.load-animation {
+  animation: loadAnimation 1s ease-out forwards;
+}
+
+.splitter__first,
+.splitter__second {
+  transition: width 0.3s ease-out;
+}
+
+.splitter__first>div,
+.splitter__second>div {
+  overflow: hidden;
+}
+
+.splitter__first::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, var(--overlay-opacity, 0));
+  /* Utiliza la variable CSS --overlay-opacity para ajustar la opacidad */
+  pointer-events: none;
+  transition: background 0.3s ease-out;
+}
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee__text {
+  display: inline-block;
+  font-size: 'Aeonik-Bold';
+  font-weight: bold;
+  animation: marquee 10s linear infinite;
+  user-select: none;
+  /* Standard syntax */
+  -webkit-user-select: none;
+  /* Safari 3.1+ */
+  -moz-user-select: none;
+  /* Firefox 2+ */
+  -ms-user-select: none;
+}
+
+.copyright-work {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 2%;
+}
+
+.video-container {
+  width: 100%;
+  padding: 0;
+  margin-bottom: -3px;
+}
+
+.video-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-right {
+  padding: 7vh 2.5vw 0 0.2%;
+  height: 100vh;
+  overflow: auto;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  opacity: 0;
+  animation: opacity 1s forwards;
+  animation-delay: 1.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 15vh;
+  align-items: center;
+
+  & div:last-child {
+    margin-bottom: 14vh;
+  }
+}
+
+.container-image-right {
+  width: 100%;
+  height: 78vh;
+}
+
+.image-right {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.image-right-title {
+  color: #fff;
+  font-family: 'Aeonik-Bold';
+  font-size: 1.5rem;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  margin: 0;
+  white-space: nowrap;
+  font-size: 12px;
+  text-decoration: underline;
+  font-family: 'Aeonik';
+}
+
+.bar-container {
+  position: relative;
+
+  height: 70px;
+  overflow: hidden;
+
+  & .bars {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    left: 0;
+    background-color: #0c0c0c;
+    top: 0;
+    -webkit-animation: loop 6s infinite;
+    animation: loop 6s infinite;
+    -webkit-animation-timing-function: cubic-bezier(1, 0, 0, 1);
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
+    z-index: 1;
+    padding: 2px 0;
+  }
+}
+
+.bar1,
+.bar2 {
+  position: absolute;
+  top: 5px;
+  width: 3px;
+  height: 80%;
+  background-color: #f7f7f2;
+}
+
+.bar2 {
+  right: 1px;
+}
+
+.mobile-works {
+  display: none;
+}
+
+@keyframes loop {
+  0% {
+    transform: translateY(100%);
+  }
+
+  22% {
+    transform: translateY(-5px);
+  }
+
+  42% {
+    transform: translateY(-5px);
+  }
+
+  60% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .splitter__resizer,
+  .splitter__second,
+  .copyright-work,
+  .video-container {
+    display: none;
+  }
+
+  .splitter__first {
+    width: 100%;
+  }
+
+  .splitter__first.load-animation {
+    animation: none;
+  }
+
+  .workbanner-container {
+    margin-top: -10%;
+  }
+
+  .slogan-works {
+    margin-top: 1rem;
+  }
+
+  .button-works {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 60%;
+  }
+
+  .marquee__text {
+    margin: 2vh;
+  }
+
+  .icon-works {
+    padding-top: 5%;
+    padding-left: 4%;
+  }
+
+  .mobile-works {
+    display: block;
+    background-color: #0c0c0c;
+    /* padding-bottom: 10vh; */
+  }
+}

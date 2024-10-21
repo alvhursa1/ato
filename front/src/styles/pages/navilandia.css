@@ -1,0 +1,384 @@
+.navilandia-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8vh 2.5vw 0 3.2vw;
+  position: relative;
+
+  & .animation-pages {
+    overflow: hidden;
+    /* background-color: aqua; */
+    width: 32%;
+    margin: 0 auto;
+  }
+
+  & .slide-pages {
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .navilandia-image-container {
+    max-height: 80vh;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: expand 2s forwards;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @keyframes expand {
+    to {
+      max-height: auto;
+      /* Cambia max-height a un valor grande */
+    }
+  }
+
+  & .animation-pages.animation {
+    width: 100%;
+    height: 78vh;
+    animation: reduce 2s forwards;
+    animation-delay: 1s;
+  }
+
+  & .title-work-page {
+    font-size: 5vw;
+    color: #fff;
+    font-family: 'Aeonik';
+    text-align: center;
+    margin: 0;
+    margin-top: 1vh;
+  }
+
+  & .scroll-text-works {
+    font-size: 1vw;
+    color: #fff;
+    font-family: 'Aeonik-light';
+    text-align: center;
+    margin: 0;
+    opacity: 0;
+    animation: fade 1s forwards;
+    animation-delay: 3s;
+  }
+}
+
+.navilandia-description {
+  margin-top: 2vh;
+  padding: 4% 8% 4% 8%;
+
+  & .description-text {
+    font-size: 3.1rem;
+    color: #fff;
+    font-family: 'Aeonik';
+    font-weight: 600;
+    margin: 0 auto;
+    width: fit-content;
+    margin-bottom: 10vh;
+  }
+
+  & .grid-navilandia {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 1px;
+    background-color: #fff;
+
+    & .grid-item-navilandia {
+      background-color: #0c0c0c;
+      color: #fff;
+
+      & p {
+        font-family: 'Aeonik-light';
+      }
+    }
+
+    & .grid-item-navilandia:nth-child(5) {
+      & p {
+        width: 65%;
+      }
+    }
+
+    & .grid-item-navilandia.button {
+      & div {
+        cursor: pointer;
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+        height: min-content;
+        margin-top: 10px;
+        gap: 8px;
+
+        & p {
+          margin: 0;
+        }
+
+        & button {
+          width: 30px;
+          height: 30px;
+          color: #fff;
+          border: 1px solid #fff;
+          background-color: transparent;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    & .grid-item-navilandia.up {
+      display: flex;
+      align-items: flex-end;
+
+      & p {
+        margin: 0;
+        font-family: 'Aeonik-Bold';
+        font-size: 1.3rem;
+        margin: 0 0 7px 0;
+      }
+    }
+  }
+}
+
+.navilandia-section-1 {
+  margin-top: 10vh;
+  padding: 0 8%;
+
+  & .image-navilandia-1 {
+    width: 70%;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  & .image-navilandia-2-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10vh;
+    gap: 2vw;
+
+    & div {
+      width: 30%;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  & .text-navilandia-1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 10vh;
+
+    & p {
+      font-family: 'Aeonik-light';
+      font-size: 1.2rem;
+      color: #fff;
+      margin: 0;
+      width: 40%;
+      margin-top: 13vh;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navilandia-container {
+    padding: 8vh 6vw 0 6vw;
+
+    & .animation-pages {
+      width: 100%;
+      margin-top: 0;
+    }
+
+    & .navilandia-image-container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: reduce-image 2s forwards;
+      animation-delay: 1s;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    & .animation-pages.animation {
+      width: 100%;
+      height: 78vh;
+      animation: reduce 2s forwards;
+      margin-top: 6vh;
+      animation-delay: 1s;
+    }
+
+    & .title-work-page {
+      font-size: 2rem;
+      color: #fff;
+      font-family: 'Aeonik';
+      text-align: center;
+      margin: 0;
+      margin-bottom: 0;
+      margin-top: 1vh;
+    }
+
+    & .scroll-text-works {
+      font-size: 1rem;
+      color: #fff;
+      font-family: 'Aeonik-light';
+      text-align: center;
+      margin: 0;
+      margin-top: 2vh;
+      opacity: 0;
+      animation: fade 1s forwards;
+      animation-delay: 3s;
+    }
+  }
+
+  .container-prevbutton-pages.mobile,
+  .container-nextbutton-pages.mobile {
+    top: 90%;
+    z-index: 100;
+
+    & .prevbutton-pages,
+    .nextbutton-pages {
+      width: 30px;
+      height: 30px;
+    }
+
+    & p {
+      font-size: 14px;
+    }
+  }
+
+  .container-nextbutton-pages.mobile {
+    right: 4vw;
+  }
+
+  .container-prevbutton-pages.mobile {
+    left: 4vw;
+  }
+
+  .navilandia-description {
+    margin-top: 2vh;
+    padding: 4% 6vw;
+
+    & .description-text {
+      font-size: 1.5rem;
+      color: #fff;
+      font-family: 'Aeonik';
+      font-weight: normal;
+      margin: 0 auto;
+      width: fit-content;
+      margin-bottom: 0;
+    }
+
+    & .grid-navilandia {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 1px;
+      background-color: #fff;
+      max-height: 36vh;
+
+      & .grid-item-navilandia {
+        background-color: #0c0c0c;
+        color: #fff;
+
+        & p {
+          font-size: 9px;
+        }
+      }
+
+      & .grid-item-navilandia:nth-child(5) {
+        & p {
+          width: 100%;
+        }
+      }
+
+      & .grid-item-navilandia.up p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .navilandia-section-1 {
+    margin-top: 5vh;
+    padding: 0 6vw;
+
+    & .image-navilandia-1 {
+      width: 100%;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    & .image-navilandia-2-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column-reverse;
+      margin-top: 5vh;
+      gap: 2vw;
+
+      & div:first-child {
+        align-self: flex-end;
+      }
+
+      & div:last-child {
+        align-self: flex-start;
+      }
+
+      & div {
+        width: 70%;
+
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    & .text-navilandia-1 {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-top: 5vh;
+
+      & p {
+        font-family: 'Aeonik-light';
+        font-size: 1.1rem;
+        color: #fff;
+        margin: 0;
+        width: 80%;
+        margin-top: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,566 @@
+.fiona-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8vh 2.5vw 0 3.2vw;
+  position: relative;
+
+  & .animation-pages {
+    overflow: hidden;
+    /* background-color: aqua; */
+    width: 32%;
+    margin: 0 auto;
+  }
+
+  & .slide-pages {
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .fiona-image-container {
+    max-height: 80vh;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: expand 2s forwards;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  & .animation-pages.animation {
+    width: 100%;
+    height: 78vh;
+    animation: reduce 2s forwards;
+    animation-delay: 1s;
+  }
+
+  & .title-work-page {
+    font-size: 5vw;
+    color: #fff;
+    font-family: 'Aeonik';
+    text-align: center;
+    margin: 0;
+    margin-top: 1vh;
+  }
+
+  & .scroll-text-works {
+    font-size: 1vw;
+    color: #fff;
+    font-family: 'Aeonik-light';
+    text-align: center;
+    margin: 0;
+    opacity: 0;
+    animation: fade 1s forwards;
+    animation-delay: 3s;
+  }
+}
+
+.fiona-description {
+  margin-top: 2vh;
+  padding: 4% 8% 4% 8%;
+
+  & .description-text {
+    font-size: 3.1rem;
+    color: #fff;
+    font-family: 'Aeonik';
+    font-weight: 600;
+    margin: 0 auto;
+    width: fit-content;
+    margin-bottom: 10vh;
+  }
+
+  & .grid-fiona {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 1px;
+    background-color: #fff;
+
+    & .grid-item-fiona {
+      background-color: #0c0c0c;
+      color: #fff;
+
+      & p {
+        font-family: 'Aeonik-light';
+      }
+    }
+
+    & .grid-item-fiona:nth-child(5) {
+      & p {
+        width: 55%;
+      }
+    }
+
+    & .grid-item-fiona.button {
+      & div {
+        cursor: pointer;
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+        height: min-content;
+        margin-top: 10px;
+        gap: 8px;
+
+        & p {
+          margin: 0;
+        }
+
+        & button {
+          width: 30px;
+          height: 30px;
+          color: #fff;
+          border: 1px solid #fff;
+          background-color: transparent;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    & .grid-item-fiona.up {
+      display: flex;
+      align-items: flex-end;
+
+      & p {
+        margin: 0;
+        font-family: 'Aeonik-Bold';
+        font-size: 1.3rem;
+        margin: 0 0 7px 0;
+      }
+    }
+  }
+}
+
+.fiona-section-1 {
+  padding: 0 8% 0 8%;
+  margin-top: 10vh;
+
+  & .fiona-picture-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .fiona-picture-2-container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin: 0 auto;
+    margin-top: 20vh;
+
+    & .fiona-picture-2-text {
+      font-size: 1.2rem;
+      color: #fff;
+      font-family: 'Aeonik-light';
+      margin: 0 auto;
+      width: 50%;
+      margin-bottom: 10vh;
+
+      & p {
+        margin: 0;
+        width: 78%;
+      }
+    }
+
+    & .fiona-picture-2 {
+      width: 47%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: start;
+      margin: 0 auto;
+
+      & div {
+        width: 55%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  & .fiona-picture-3-container {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    margin: 0 auto;
+    gap: 30px;
+    margin-top: -10vh;
+
+    & .fiona-picture-3 {
+      width: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  & .fiona-picture-4-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: start;
+    margin: 0 auto;
+    margin-top: 20vh;
+
+    & .fiona-picture-4 {
+      width: 75%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: start;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.slide-pages.inRight {
+  animation: slideInRight 800ms forwards;
+}
+
+.slide-pages.inLeft {
+  animation: slideInLeft 800ms forwards;
+}
+
+.slide-pages.outRight {
+  transform: translateX(-100%);
+  animation: slideOutRight 800ms forwards;
+  animation-delay: 1s;
+}
+
+.slide-pages.outLeft {
+  transform: translateX(100%);
+  animation: slideOutLeft 1s forwards;
+  animation-delay: 1s;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .fiona-container {
+    padding: 8vh 6vw 0 6vw;
+
+    & .animation-pages {
+      width: 100%;
+      margin-top: 0;
+    }
+
+    & .fiona-image-container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: reduce-image 2s forwards;
+      animation-delay: 1s;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    & .animation-pages.animation {
+      width: 100%;
+      height: 78vh;
+      animation: reduce 2s forwards;
+      margin-top: 6vh;
+      animation-delay: 1s;
+    }
+
+    & .title-work-page {
+      font-size: 2rem;
+      color: #fff;
+      font-family: 'Aeonik';
+      text-align: center;
+      margin: 0;
+      margin-bottom: 0;
+      margin-top: 1vh;
+    }
+
+    & .scroll-text-works {
+      font-size: 1rem;
+      color: #fff;
+      font-family: 'Aeonik-light';
+      text-align: center;
+      margin: 0;
+      margin-top: 2vh;
+      opacity: 0;
+      animation: fade 1s forwards;
+      animation-delay: 3s;
+    }
+  }
+
+  .container-prevbutton-pages.mobile,
+  .container-nextbutton-pages.mobile {
+    top: 90%;
+    z-index: 100;
+
+    & .prevbutton-pages,
+    .nextbutton-pages {
+      width: 30px;
+      height: 30px;
+    }
+
+    & p {
+      font-size: 14px;
+    }
+  }
+
+  .container-nextbutton-pages.mobile {
+    right: 4vw;
+  }
+
+  .container-prevbutton-pages.mobile {
+    left: 4vw;
+  }
+
+  .fiona-description {
+    margin-top: 2vh;
+    padding: 4% 6vw;
+
+    & .description-text {
+      font-size: 1.3rem;
+      color: #fff;
+      font-family: 'Aeonik';
+      font-weight: normal;
+      margin: 0 auto;
+      width: fit-content;
+      margin-bottom: 0;
+    }
+
+    & .grid-fiona {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 1px;
+      background-color: #fff;
+      max-height: 36vh;
+
+      & .grid-item-fiona {
+        background-color: #0c0c0c;
+        color: #fff;
+
+        & p {
+          font-size: 9px;
+        }
+      }
+
+      & .grid-item-fiona:nth-child(5) {
+        & p {
+          width: 100%;
+        }
+      }
+
+      & .grid-item-fiona.up p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .fiona-section-1 {
+    margin-top: 5vh;
+    padding: 0 6vw;
+    display: flex;
+    flex-direction: column;
+
+    & #fiona-1 {
+      order: 0;
+    }
+
+    & #fiona-3 {
+      order: 1;
+    }
+
+    & #fiona-2 {
+      order: 2;
+    }
+
+    & #fiona-4 {
+      order: 3;
+    }
+
+    & .fiona-picture-1 {
+      width: 100%;
+      height: 30vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .fiona-picture-2-container {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      margin-top: 5vh;
+
+      & .fiona-picture-2-text {
+        font-size: 1.1rem;
+        color: #fff;
+        font-family: 'Aeonik-light';
+        width: 70%;
+        margin-bottom: 5vh;
+        margin: 0;
+        margin-top: 5vh;
+
+        & p {
+          margin: 0;
+          width: 100%;
+          font-size: 14px;
+        }
+      }
+
+      & .fiona-picture-2 {
+        width: 45%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin: 0;
+        margin-top: -10vh;
+
+        & div {
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+
+          & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    & .fiona-picture-3-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin: 0;
+      gap: 30px;
+      margin-top: 5vh;
+
+      & .fiona-picture-3:last-child {
+        display: none;
+      }
+
+      & .fiona-picture-3 {
+        width: 47%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    & .fiona-picture-4-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      margin: 0 auto;
+      margin-top: 5vh;
+      margin-bottom: 5vh;
+
+      & .fiona-picture-4 {
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
